@@ -1,13 +1,14 @@
 // Carrega as variáveis do .env
 // Server/src/server.js
-import connectDB from "./src/config/db.js"
+import DBsConnections from "./src/config/db.js"
 import express, { application } from "express"
 import cors from "cors";
 
 const app = express();
 
 // Conectar ao Banco de Dados
-connectDB();
+DBsConnections.connectDB(); //MongoDB
+DBsConnections.testConnection();//Postgre
 
 // Middlewares
 app.use(cors()); // Permite que o frontend acesse a API

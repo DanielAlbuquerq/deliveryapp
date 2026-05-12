@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Restaurant {
+  id                String   @id @default(uuid())
+  nome              String
+  logo              String
+  categoria         String
+  taxaEntrega       Int      @default(0) // Armazenado em centavos [cite: 75, 76]
+  raioEntregaKm     Int      @default(5)
+  lat               Float
+  lng               Float
+  tempoEntrega      String   @default("30 min")
+  ativo             Boolean  @default(true)
+  pedidos           Order[]
+  createdAt         DateTime @default(now())
+}
+
+model Order {
+  id             String     @id @default(uuid())
+  restaurante    Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurantId   String
+  itens          Json       // Armazena a lista de produtos como JSON
+  subtotal       Int
+  taxaEntrega    Int        // Valor fixo capturado no momento do pedido [cite: 43, 50]
+  total          Int
+  status         String     @default("pendente")
+  createdAt      DateTime   @default(now())
+}

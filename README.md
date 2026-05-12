@@ -1,4 +1,4 @@
-Aplicativo de entrega:
+APLICATIVO DE ENTREGA:
 
 1. Arquitetura do Ecossistema
 
@@ -28,6 +28,21 @@ Aplicativo de entrega:
 - Desenvolvimento do Backend: Criei as rotas de autenticação (JWT) e o CRUD de produtos. 
 - Integração de Mapas: Configurei com a-APIs externas para lidar com endereços e rotas.
 
-Arquitetura MERN para Delivery
+ARQUITETURA PROJETO
 
-- Mongoose Schema: Opetei por taxa de entrega fixa pois a cidade de Luís Gomes é pequena, utilizarei o sistema de coordenadas 2dsphere do MongoDB
+Comecei com Arquitetura híbrida de banco de dados:
+-🟩 PostgreSQL (principal)
+    *usado para dados críticos e relacionais:
+    - usuários
+    - restaurantes
+    - pedidos
+    - pagamentos
+    - assinaturas
+
+-🟦 MongoDB
+    *Use para dados flexíveis:
+    -logs
+    -histórico de eventos
+    -tracking de pedidos (tempo real)
+    -notificações
+    -cache de consultas complexas

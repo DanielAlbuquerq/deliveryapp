@@ -1,5 +1,6 @@
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+import { PrismaClient } from "@prisma/client"
 
 // Carrega o MONGO_URI
 dotenv.config()
@@ -16,4 +17,15 @@ const connectDB = async () => {
   }
 };
 
-export default connectDB;
+const prisma = new PrismaClient();
+
+const testConnection = async () => {
+  try {
+    await prisma.$connect();
+    console.log("Conectado ao PostgreSQL com sucesso via Prisma!"); //[cite: 112]
+  } catch (e) {
+    console.error("Falha na conexão com o banco:", e);
+  }
+};
+
+export default {connectDB, testConnection, prisma};

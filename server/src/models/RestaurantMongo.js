@@ -8,7 +8,7 @@ const RestaurantSchema = new mongoose.Schema({
     },
     logo: {
         type: String, //URL da imagem (S3 ou Cloudinary)
-        required: true
+        required: true,
     },
     categoria:{
         type: String, 
