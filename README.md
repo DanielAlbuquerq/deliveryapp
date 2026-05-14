@@ -46,3 +46,8 @@ Comecei com Arquitetura híbrida de banco de dados:
     -tracking de pedidos (tempo real)
     -notificações
     -cache de consultas complexas
+
+DIFICULDADES ENCONTRADAS:
+    -Tranferir toda configuração do Prisma versão antiga e configurar toda conexão para o prisma 7.8.0, renomear arquivos e adicionar novas feature como adapter.
+    
+    
