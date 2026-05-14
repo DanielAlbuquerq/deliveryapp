@@ -1,3 +1,4 @@
+// Este arquivo será usado quando eu integrar o MOngoDB para controle de logs de erros, ou para armazenar dados que não sejam relacionais, como sessões de usuários, etc.
 import dotenv from "dotenv"
 import { testConnection } from "./prisma.js";
 import test from "node:test";
@@ -7,7 +8,7 @@ import { getRestaurant } from  "../../index.js";
 // Carrega o MONGO_URI
 // dotenv.config()
 
-testConnection();
+// testConnection();
 // getRestaurant();
 //MongoDB Connection 
 // const connectDB = async () => {

@@ -14,6 +14,7 @@ export const createRestaurant = async (req, res) => {
   }
 };  
 
+
 // Listar todos os restaurantes
 export const getRestaurants = async (req, res) => {
   try{
