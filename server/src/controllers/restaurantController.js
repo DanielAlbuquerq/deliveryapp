@@ -1,4 +1,4 @@
-import prisma from "../config/db.js"
+import {prisma} from "../config/prisma.js";
 
 // Criar um novo restaurante
 export const createRestaurant = async (req, res) => {
@@ -23,4 +23,4 @@ export const getRestaurants = async (req, res) => {
     res.status(500).json({ error: "Erro ao buscar restaurantes: " + error.message });
   }};
 
-export { createRestaurant, getRestaurants };
+// export { createRestaurant, getRestaurants };
