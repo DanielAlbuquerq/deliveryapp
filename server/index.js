@@ -2,6 +2,7 @@ import {prisma, testConnection} from "./src/config/prisma.js"
 import express from "express"
 import cors from "cors";
 import restaurantRoutes from "./src/routes/restaurantRoutes.js";
+import orderRoutes from "./src/routes/orderRoutes.js";
 
 const app = express();
 
@@ -20,7 +21,11 @@ app.use(express.urlencoded({ extended: true })); // Permite entender dados de fo
 // }
 
 //Rotas
-app.use('/api/restaurants', restaurantRoutes); // Rota para restaurantes
+app.use('/api/restaurants', restaurantRoutes); 
+// Rota para restaurantes
+
+app.use('/api/orders', orderRoutes); 
+// Rota para pedidos
 
 // Rota de Teste (Health Check)
 app.get('/api/test', (req, res) => {

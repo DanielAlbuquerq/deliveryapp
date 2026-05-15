@@ -1,7 +1,7 @@
 import express from 'express';
 import { createRestaurant, getRestaurants } from '../controllers/restaurantController.js';
 
-const router = express.Router()
+const router = express.Router() 
 
 // Rota para cadastrar: POST http://localhost:5000/api/restaurants
 router.post('/', createRestaurant);
