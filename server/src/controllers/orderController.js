@@ -37,8 +37,9 @@ export const createOrder = async (req, res) => {
                 total, 
                 metodoPagamento,
                 status: 'pendente',
-                //Aqui podemos adicionar o ID do cliente vindo do JWT (req.user.id)
-            },
+                //Aqui podemos adicionar o ID do cliente
+                // vindo do JWT (req.user.id)
+            }
             });
 
             res.status(201).json(newOrder);

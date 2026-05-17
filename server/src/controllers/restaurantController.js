@@ -6,7 +6,7 @@ export const createRestaurant = async (req, res) => {
     const { nome, logo, categoria, taxaEntrega, raioEntregaKm, lat, lng } = req.body;
     
     const newRestaurant = await prisma.restaurant.create({
-      data: { nome, logo, categoria, taxaEntrega, raioEntregaKm, lat, lng }
+      data: { nome, logo,categoria, taxaEntrega, raioEntregaKm, lat, lng }
     });
     res.status(201).json(newRestaurant);
   } catch (error) {
