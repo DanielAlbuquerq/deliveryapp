@@ -47,7 +47,13 @@ Comecei com Arquitetura híbrida de banco de dados:
     -notificações
     -cache de consultas complexas
 
+Configuração de autenticação JWT (JSON Web Tokes):
+    - Configurei um sistema de Roles (Papéis), pois precisamos diferenciar se quem está logado é um Cliente, um Restaurante ou um Entregador.
+
 DIFICULDADES ENCONTRADAS:
-    -Tranferir toda configuração do Prisma versão antiga e configurar toda conexão para o prisma 7.8.0, renomear arquivos e adicionar novas feature como adapter.
+
+    - Tranferir toda configuração do Prisma versão antiga e configurar toda conexão para o prisma 7.8.0, renomear arquivos e adicionar novas feature como adapter.
+
+    - Adicionei novas colunas na tabela order, fiz o prisma migration e prisma generate pórem não estava atualizando o cliente, solucionei o problema renicializando o servidor e o typescript running.
     
     

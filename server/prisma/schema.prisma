@@ -27,6 +27,17 @@ model Restaurant {
   createdAt         DateTime @default(now())
 }
 
+enum PaymentMethod {
+  DINHEIRO
+  dinheiro
+  CARTAO_CREDITO
+  cartao_credito
+  CARTAO_DEBITO
+  cartao_debito
+  PIX
+  pix
+}
+
 model Order {
   id             String     @id @default(uuid())
   restaurante    Restaurant @relation(fields: [restaurantId], references: [id])
@@ -37,4 +48,5 @@ model Order {
   total          Int
   status         String     @default("pendente")
   createdAt      DateTime   @default(now())
+  metodoPagamento  PaymentMethod   @default(PIX)
 }
